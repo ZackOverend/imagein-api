@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imagein-api", "imagein-api.csproj", "{C5637B84-B2AD-FC70-08A3-90B97539B655}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5637B84-B2AD-FC70-08A3-90B97539B655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5637B84-B2AD-FC70-08A3-90B97539B655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5637B84-B2AD-FC70-08A3-90B97539B655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5637B84-B2AD-FC70-08A3-90B97539B655}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {996FB297-E6CB-4C79-ADEF-1EF7B062869D}
+	EndGlobalSection
+EndGlobal
