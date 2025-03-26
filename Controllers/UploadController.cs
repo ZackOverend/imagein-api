@@ -62,5 +62,11 @@ public class ImageController : ControllerBase
 
         return response;
     }
+
+    [HttpGet("ping")]
+public IActionResult Ping()
+{
+    return Ok("pong 🏓");
+}
 }
 }
