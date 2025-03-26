@@ -1,4 +1,13 @@
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
 
 // Add services to the container.
 
@@ -15,9 +24,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+

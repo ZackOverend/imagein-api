@@ -7,7 +7,8 @@ namespace imagein_api.Models
 {
     public class Response
     {
-        public int StatusCode {get; set;}
-        public string ErrorMessage {get; set;}
+        public int StatusCode { get; set; }
+        public string ErrorMessage { get; set; }
+        public object Data { get; set; } 
     }
 }
