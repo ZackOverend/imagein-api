@@ -1,32 +1,15 @@
-DotNetEnv.Env.Load();
-
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFrontend",
-        policy => policy.WithOrigins("http://localhost:5200/")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod());
-});
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Add services to the container
+builder.Services.AddControllersWithViews(); // or similar
 
 var app = builder.Build();
 
-
+// Use HTTPS redirection
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
-app.UseCors("AllowFrontend");
-
 app.UseAuthorization();
 
-app.MapControllers();
-
+app.MapDefaultControllerRoute(); // or your custom routes
 app.Run();
-
