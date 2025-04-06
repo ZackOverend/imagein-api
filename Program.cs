@@ -1,11 +1,13 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Allow any header & method from specific origins
+// Add services to the container
+builder.Services.AddControllers();
+builder.Services.AddAuthorization(); // ✅ This is the missing line
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://zackaryoverend.vercel.app/")
+        policy.WithOrigins("http://localhost:3000", "https://your-frontend-domain.com")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -13,10 +15,11 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Use the CORS policy
-app.UseCors("AllowFrontend");
-
+// Configure the HTTP request pipeline
 app.UseHttpsRedirection();
-app.UseAuthorization();
+app.UseCors("AllowFrontend");
+app.UseAuthorization(); // ✅ Now this works
+
 app.MapControllers();
+
 app.Run();
