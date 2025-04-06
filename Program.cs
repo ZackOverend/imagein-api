@@ -5,7 +5,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://your-frontend-domain.com")
+        policy.WithOrigins("http://localhost:3000", "https://zackaryoverend.vercel.app/")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
