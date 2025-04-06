@@ -7,7 +7,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://imagein-zackaryoverend.vercel.app/")
+        policy.WithOrigins("http://localhost:3000", "https://imagein-zackaryoverend.vercel.app/", "https://imagein-gamma.vercel.app/", "https://imagein-zacks-projects-771ac82d.vercel.app/")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
